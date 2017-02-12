@@ -1,55 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.1/css/bootstrap-slider.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/darkly/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.1/bootstrap-slider.min.js"></script>
   <title>Parcel</title>
 </head>
 <body>
-  <div class="row">
-    <h2 class="col-xs-10 col-xs-offset-1">
-      <span class="col-xs-4">Node ID:</span>
-      <span class="label label-info col-xs-offset-1">NODE ID</span>
-    </h2>
-  </div>
-  <div class="row col-xs-offset-1">
-    <h2 class="col-xs-4">
-      Allocated Space:
-    </h2>
-    <h4>
-      <input id="allocated" type="text" data-slider-ticks="[0, 50, 100]" data-slider-ticks-snap-bounds="10" data-slider-ticks-labels='["0%", "50%", "100%"]' data-slider-value="50"/>
-    </h4>
-  </div>
-  <div class="row">
-    <h2 class="col-xs-10 col-xs-offset-1">
-      <span class="col-xs-4">Storage Location:</span>
-      <span class="label label-success col-xs-offset-1">LOCATION</span>
-    </h2>
-  </div>
-  <div class="row">
-    <h2 class="col-xs-6 col-xs-offset-1">
-      <span class="col-xs-5">Used Storage:</span>
-      <div class="progress">
-        <div class="progress-bar progress-bar-success progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
-          <span>1 GB (50%) of 2 GB Used</span>
+  <div class="container">
+    <div class="row" style="margin-bottom: 35px">
+      <h1><img width="65" src="http://vectrum.xyz/images/logo.png" style="margin-top: -10px; margin-right: 10px">P A R C E L</h1>
+    </div>
+    <div class="row">
+      <h2 class="col-xs-10 col-xs-offset-1">
+        <span class="col-xs-5">
+          <i class="fa fa-id-badge" aria-hidden="true"></i>
+          Node ID:
+        </span>
+        <span class="label label-info col-xs-offset-1">CS6D-E3TF-GG7B</span>
+      </h2>
+    </div>
+    <div class="row col-xs-offset-1">
+      <h2 id="alloc_label" class="col-xs-5" style="margin-right: 35px">
+        <i class="fa fa-toggle-on" aria-hidden="true"></i>Allocated Space:
+      </h2>
+      <h4>
+        <input id="allocated" type="text" data-slider-ticks="[0, 50, 100]" data-slider-ticks-snap-bounds="10" data-slider-ticks-labels='["0%", "50%", "100%"]' data-slider-value="50"/>
+      </h4>
+    </div>
+    <div class="row">
+      <h2 class="col-xs-10 col-xs-offset-1">
+        <span class="col-xs-5">
+          <i class="fa fa-database" aria-hidden="true"></i>
+          Storage Location:
+        </span>
+        <span class="label label-success col-xs-offset-1">LOCATION</span>
+      </h2>
+    </div>
+    <div class="row">
+      <h2 class="col-xs-10 col-xs-offset-1">
+        <span class="col-xs-6">
+          <i class="fa fa-pie-chart" aria-hidden="true"></i>Used Storage:
+        </span>
+        <div class="progress">
+          <div class="progress-bar progress-bar-success progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+            <span>1 GB (50%) of 2 GB Used</span>
+          </div>
         </div>
-      </div>
-    </h2>
+      </h2>
+    </div>
   </div>
-
 
   <style type="text/css">
-    body {
-      background-color: #B4B9BF;
-    }
     h4 {
       margin-top: 25px;
+    }
+    body {
+      background: url(http://blacktie.co/demo/premium/dashio/frontend/demos/sliderbg_01.png);
+      font-family: 'Merriweather', serif !important;
     }
     .progress {
       margin-top: 10px;
       width: 50%;
+    }
+    .slider {
+      width: 50% !important;
+    }
+    .fa {
+      margin-right: 10px;
     }
   </style>
 
