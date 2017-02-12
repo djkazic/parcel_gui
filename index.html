@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css?family=Sura" rel="stylesheet">
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.1/bootstrap-slider.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+    crossorigin="anonymous"></script>
   <title>Parcel</title>
 </head>
 <body>
@@ -22,7 +24,7 @@
           <i class="fa fa-id-badge" aria-hidden="true"></i>&nbsp;
           Node ID:
         </span>
-        <span class="label label-info col-xs-offset-1">CS6D-E3TF-GG7B</span>
+        <span id="node_id" class="label label-info col-xs-offset-1"></span>
       </h2>
     </div>
     <div class="row col-xs-offset-1">
@@ -39,7 +41,7 @@
           <i class="fa fa-database" aria-hidden="true"></i>
           Storage Location:
         </span>
-        <span class="label label-success col-xs-offset-1">LOCATION</span>
+        <span id="node_location" class="label label-success col-xs-offset-1"></span>
       </h2>
     </div>
     <div class="row">
@@ -84,6 +86,20 @@
       ticks: [0, 50, 100],
       ticks_labels: ["0%", "50%", "100%"],
       ticks_snap_bounds: 10
+    });
+  </script>
+
+  <script>
+    $(document).ready(function() {
+      $.ajax({
+        url: "http://localhost:5000/settings",
+        method: "GET",
+        success: function(data) {
+          console.log(data)
+          $('#node_id').html(data.mutex);
+          $('#node_location').html(data.location);
+        }
+      });
     });
   </script>
 </body>
