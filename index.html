@@ -103,7 +103,10 @@
         method: "GET",
         success: function(data) {
           console.log(data)
-          $('#node_id').html(data.mutex);
+          $('#node_id').html(data.node_id.substring(0, 24) + " ...");
+          $('#node_id').click(function() {
+            prompt("Copy node ID to clipboard: Ctrl + C, Enter: ", data.node_id);
+          });
           $('#node_location').html(data.location);
         }
       });
